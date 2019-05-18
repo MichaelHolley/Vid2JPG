@@ -3,6 +3,6 @@ This repository provides a python-script which converts a .mp4-file to a folder 
 
 Inside the folder you select there will be created another folder with the name by date and time, which is filled with the output images.
 
-#### More file-formats than mp4 will be supported soon.
+### More file-formats than mp4 will be supported soon.
 
 <img src = "InterfacePreview.PNG" width = "300">
