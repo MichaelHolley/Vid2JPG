@@ -9,7 +9,7 @@ outputFolderPath = ""
 
 def selectVideo():
     global filePath
-    filePath = filedialog.askopenfilename(initialdir="C:\\", title="Select input-file", filetypes=(("input-file", "*.mp4"), ("all files", "*.*")))
+    filePath = filedialog.askopenfilename(initialdir="C:\\", title="Select input-file", filetypes=(("input-file", "*.mp4 *.avi *.wmv"), ("all files", "*.*")))
     print("Selected Video: \t" + filePath)
 
 def selectOutputFolder():
