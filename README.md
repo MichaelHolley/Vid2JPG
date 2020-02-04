@@ -3,6 +3,10 @@ This repository provides a python-script which converts a video-file to a folder
 
 Inside the folder you select there will be created another folder with the name by date and time, which is filled with the output images.
 
+## Required libs:
+- Tkinter
+- OpenCV
+
 ### Supported Video-Formats:
 - .mp4
 - .avi
