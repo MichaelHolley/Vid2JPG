@@ -1,4 +1,5 @@
 from tkinter import filedialog, messagebox
+from tkinter.ttk import *
 from tkinter import *
 import cv2
 import os
@@ -18,7 +19,11 @@ def selectOutputFolder():
     print("Selected Folder: \t" + outputFolderPath)
 
 def convertVideoToImages():
+    global filePath
+    while filePath is "":
+        selectVideo()
     video = cv2.VideoCapture(filePath)
+    numberOfFrames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
 
     date = time.strftime("%d-%m-%Y")
     localTime = time.strftime("%H-%M-%S")
@@ -35,6 +40,10 @@ def convertVideoToImages():
         success,image = video.read()
         if(success):
             cv2.imwrite(timedOutputFolderPath + "/" + "frame%d.jpg" % i, image)
+
+            progress['value'] = int((i / numberOfFrames) * 100)
+            progress.update_idletasks()
+
             if cv2.waitKey(10) == 27:
                 break
             i += 1
@@ -48,6 +57,10 @@ Label(text="Output-Folder:", width=20).grid(row=1, column=0)
 Button(text="Select", command=selectOutputFolder, width=10).grid(row=1, column=1)
 
 Button(text="Start", command=convertVideoToImages, width=10).grid(row=2, column=0)
+
+progress = Progressbar(orient = HORIZONTAL, length=100, mode = 'determinate')
+
+progress.grid(row=2, column=1)
 
 mainloop()
 
