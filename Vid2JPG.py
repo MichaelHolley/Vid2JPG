@@ -58,7 +58,8 @@ Button(text="Select", command=selectOutputFolder, width=10).grid(row=1, column=1
 
 Button(text="Start", command=convertVideoToImages, width=10).grid(row=2, column=0)
 
-progress = Progressbar(orient = HORIZONTAL, length=100, mode = 'determinate').grid(row=2, column=1)
+progress = Progressbar(orient = HORIZONTAL, length=100, mode = 'determinate')
+progress.grid(row=2, column=1)
 
 mainloop()
 
