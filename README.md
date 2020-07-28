@@ -13,4 +13,4 @@ Not selecting a output folder causes the script to create its output folder in t
 - .avi
 - .wmv
 
-<img src = "InterfacePreview.PNG" width = "300">
+<img src = "Vid2JPG.PNG" width = "300">
