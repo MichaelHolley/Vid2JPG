@@ -18,37 +18,51 @@ class VideoToJpgConverter:
         self.select_video_btn = None
         self.select_folder_btn = None
         self.start_btn = None
+        self.video_path_label = None
+        self.folder_path_label = None
         self.setup_ui()
         self.update_button_states()
 
     def setup_ui(self):
         """Initialize the user interface"""
+        # Configure root window padding
+        self.root.configure(padx=10, pady=10)
+
         # Video selection
-        Label(self.root, text="Video:", width=20).grid(row=0, column=0)
+        Label(self.root, text="Video:", width=20).grid(row=0, column=0, padx=5, pady=5)
         self.select_video_btn = Button(
             self.root, text="Select", command=self.select_video, width=10
         )
-        self.select_video_btn.grid(row=0, column=1)
+        self.select_video_btn.grid(row=0, column=1, padx=5, pady=5)
+        # Add video path label
+        self.video_path_label = Label(self.root, text="No video selected", fg="red")
+        self.video_path_label.grid(row=0, column=2, sticky="w", padx=(5, 20), pady=5)
 
         # Output folder selection
-        Label(self.root, text="Output-Folder:", width=20).grid(row=1, column=0)
+        Label(self.root, text="Output-Folder:", width=20).grid(
+            row=1, column=0, padx=5, pady=5
+        )
         self.select_folder_btn = Button(
             self.root, text="Select", command=self.select_output_folder, width=10
         )
-        self.select_folder_btn.grid(row=1, column=1)
+        self.select_folder_btn.grid(row=1, column=1, padx=5, pady=5)
+        # Add folder path label
+        self.folder_path_label = Label(self.root, text="No folder selected", fg="red")
+        self.folder_path_label.grid(row=1, column=2, sticky="w", padx=(5, 20), pady=5)
 
         # Convert button
         self.start_btn = Button(
             self.root, text="Start", command=self.convert_video_to_images, width=10
         )
-        self.start_btn.grid(row=2, column=0)
+        self.start_btn.grid(row=2, column=0, padx=5, pady=5)
         self.start_btn["state"] = "disabled"
 
         # Progress bar
         self.progress = Progressbar(
             self.root, orient="horizontal", length=100, mode="determinate"
         )
-        self.progress.grid(row=2, column=1)
+
+        self.progress.grid(row=2, column=1, columnspan=2, sticky="ew", padx=5, pady=5)
 
     def update_button_states(self):
         """Update the state of buttons based on current conditions"""
@@ -64,12 +78,25 @@ class VideoToJpgConverter:
             title="Select input video",
             filetypes=(("Video files", "*.mp4 *.avi *.wmv"), ("All files", "*.*")),
         )
+
+        if self.file_path:
+            self.video_path_label.config(text=Path(self.file_path).name, fg="green")
+        else:
+            self.video_path_label.config(text="No video selected", fg="red")
         print(f"Selected Video: {self.file_path}")
         self.update_button_states()
 
     def select_output_folder(self) -> None:
         """Open directory dialog to select output folder"""
         self.output_folder_path = filedialog.askdirectory(title="Select output folder")
+
+        if self.output_folder_path:
+            self.folder_path_label.config(
+                text=Path(self.output_folder_path).name, fg="green"
+            )
+        else:
+            self.folder_path_label.config(text="No folder selected", fg="red")
+
         print(f"Selected Folder: {self.output_folder_path}")
         self.update_button_states()
 
