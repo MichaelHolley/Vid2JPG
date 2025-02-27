@@ -18,6 +18,7 @@ This project uses `uv` for dependency management. Required packages:
 - tkinter
 
 ## Usage 🚀
+<img width="400" alt="Bildschirmfoto 2025-02-27 um 21 35 46" src="https://github.com/user-attachments/assets/b23459dc-7bca-45b0-90c3-2d72536a1b5e" />
 
 1. Click "Select" to choose your input video file
 2. Click "Select" to choose your output folder
