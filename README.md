@@ -1,4 +1,4 @@
-# Vid2JPG Converter 🎥 → 🖼️
+# Vid2JPG 🎥 → 🖼️
 
 A simple desktop application built with Python and Tkinter that converts video files into sequences of JPG images.
 
