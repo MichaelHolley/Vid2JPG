@@ -1,31 +1,34 @@
-# Vid2JPG
+# Vid2JPG Converter 🎥 → 🖼️
 
-This repository contains a Python script that converts a video file into a sequence of `.jpg` images. A simple Tkinter-based GUI allows users to select both the input video and the output folder.  
+A simple desktop application built with Python and Tkinter that converts video files into sequences of JPG images.
 
-The script creates a new subfolder within the selected output directory, named according to the current date and time, where it stores the extracted images. If no output folder is selected, the script defaults to creating the output folder in the root directory (`C:\`).  
+## Features
 
-## Requirements  
+- User-friendly graphical interface
+- Progress bar visualization during conversion
+- Automatic timestamped output folders
+- Support for common video formats (.mp4, .avi, .wmv)
 
-Make sure you have the following libraries installed:  
+## Requirements ⚙️
 
-- `tkinter` (for the GUI)  
-- `opencv-python` (for video processing)  
+This project uses `uv` for dependency management. Required packages:
 
-## Supported Video Formats  
+- Python 3.x
+- OpenCV (cv2)
+- tkinter
 
-The script supports the following video formats:  
+## Usage 🚀
 
-- `.mp4`  
-- `.avi`  
-- `.wmv`  
+1. Click "Select" to choose your input video file
+2. Click "Select" to choose your output folder
+3. Click "Start" to begin the conversion
 
-## Usage  
+The application will create a new folder with the current timestamp in your selected output directory and save all frames as sequential JPG images.
 
-1. Run the script.  
-2. Use the GUI to select a video file.  
-3. Choose an output directory (optional).  
-4. The script will extract frames and save them as `.jpg` images in a timestamped folder.  
+## Supported Formats 📁
 
-Feel free to improve or modify the script as needed!  
+Currently supports the following video formats:
 
-<img src = "Vid2JPG.PNG" width = "300">
+- .mp4
+- .avi
+- .wmv
