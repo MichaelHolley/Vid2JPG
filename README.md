@@ -27,11 +27,3 @@ This project uses `uv` for dependency management. Required packages:
 The application will create a new folder with the current timestamp (format: YYYYMMDD_HHMMSS) in your selected output directory and save all frames as sequential JPG images. For example: `20240215_143022`.
 
 Each frame will be saved as `frame_XXXX.jpg` where XXXX is the sequential frame number.
-
-## Supported Formats 📁
-
-Currently supports the following video formats:
-
-- .mp4
-- .avi
-- .wmv
