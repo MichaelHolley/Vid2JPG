@@ -1,7 +1,7 @@
 [project]
 name = "vid2jpg"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple python script that converts video files into sequences of JPG images."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
